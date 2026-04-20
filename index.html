@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Apresentação que converte 30% das reuniões em mentoria vendida</title>
+<meta name="description" content="Copie e cole a mesma apresentação que está convertendo 30% das reuniões em mentoria vendida — para mentores que faturam de R$20k a R$500k/mês." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['Fraunces', 'ui-serif', 'Georgia'],
+          sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+        },
+        colors: {
+          ink: {
+            950: '#07070A',
+            900: '#0B0B10',
+            800: '#111118',
+            700: '#171720',
+            600: '#1E1E28',
+            500: '#2A2A36',
+          },
+          bone: {
+            50:  '#F7F5EF',
+            100: '#EDEAE0',
+            200: '#C9C5B8',
+            400: '#8A8679',
+          },
+          lime: {
+            500: '#C8F24A',
+            600: '#B5E031',
+          },
+          ember: {
+            500: '#FF5A3C',
+          },
+          good: '#7DD66F',
+          bad: '#E25E4E',
+        },
+        boxShadow: {
+          'cta': '0 20px 60px -20px rgba(200,242,74,.55), 0 0 0 1px rgba(200,242,74,.25) inset',
+          'card': '0 30px 60px -30px rgba(0,0,0,.8), 0 1px 0 0 rgba(255,255,255,.04) inset',
+          'badgood': '0 30px 60px -30px rgba(125,214,111,.25), 0 0 0 1px rgba(125,214,111,.18) inset',
+          'badbad':  '0 30px 60px -30px rgba(226,94,78,.25), 0 0 0 1px rgba(226,94,78,.18) inset',
+        },
+        letterSpacing: {
+          tightest: '-0.04em',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  :root { color-scheme: dark; }
+  html, body { background: #07070A; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #EDEAE0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .font-display { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; }
+  .grain {
+    position: absolute; inset: 0; pointer-events: none; opacity: .10; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+  .aurora {
+    position: absolute; inset: -10% -10% auto -10%; height: 780px; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(60% 50% at 20% 10%, rgba(200,242,74,.18), transparent 60%),
+      radial-gradient(55% 45% at 85% 20%, rgba(255,90,60,.14), transparent 65%),
+      radial-gradient(70% 60% at 50% 90%, rgba(125,214,111,.12), transparent 65%);
+    filter: blur(10px);
+  }
+  .pill {
+    display: inline-flex; align-items: center; gap: .5rem;
+    padding: .4rem .75rem; border-radius: 999px;
+    background: rgba(247,245,239,.04);
+    border: 1px solid rgba(247,245,239,.10);
+    color: #EDEAE0; font-size: .78rem; letter-spacing: .02em;
+  }
+  .pill .dot { width: 6px; height: 6px; border-radius: 999px; background: #C8F24A; box-shadow: 0 0 12px #C8F24A; }
+  .headline { font-feature-settings: "ss01","ss02","ss07"; text-wrap: balance; overflow-wrap: break-word; hyphens: manual; }
+  .divider-dot::before { content: "·"; margin: 0 .6rem; color: rgba(237,234,224,.35); }
+
+  .cta {
+    display: inline-flex; align-items: center; gap: .6rem;
+    padding: 1.05rem 1.6rem; border-radius: 14px;
+    background: linear-gradient(180deg, #D6FA5A 0%, #B5E031 100%);
+    color: #0B0B10; font-weight: 600; letter-spacing: -0.005em;
+    box-shadow: 0 20px 60px -20px rgba(200,242,74,.55), 0 0 0 1px rgba(200,242,74,.25) inset;
+    transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s cubic-bezier(.2,.8,.2,1);
+    will-change: transform;
+  }
+  .cta:hover { transform: translateY(-2px); box-shadow: 0 28px 70px -20px rgba(200,242,74,.65), 0 0 0 1px rgba(200,242,74,.35) inset; }
+  .cta:active { transform: translateY(0); }
+  .cta:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+  .field {
+    width: 100%;
+    background: rgba(247,245,239,.04);
+    border: 1px solid rgba(247,245,239,.12);
+    color: #F7F5EF; padding: 1rem 1.05rem; border-radius: 12px;
+    font-size: 1rem; transition: border-color .2s, background .2s, transform .2s;
+  }
+  .field::placeholder { color: rgba(237,234,224,.45); }
+  .field:focus { outline: none; border-color: rgba(200,242,74,.55); background: rgba(247,245,239,.06); }
+
+  .card-surface {
+    background: linear-gradient(180deg, rgba(255,255,255,.03) 0%, rgba(255,255,255,.01) 100%);
+    border: 1px solid rgba(247,245,239,.08);
+    border-radius: 22px;
+  }
+
+  .good-col {
+    background:
+      radial-gradient(120% 80% at 100% 0%, rgba(125,214,111,.14), transparent 60%),
+      linear-gradient(180deg, rgba(125,214,111,.06), rgba(125,214,111,.02));
+    border: 1px solid rgba(125,214,111,.22);
+    border-radius: 22px;
+  }
+  .bad-col {
+    background:
+      radial-gradient(120% 80% at 0% 0%, rgba(226,94,78,.14), transparent 60%),
+      linear-gradient(180deg, rgba(226,94,78,.06), rgba(226,94,78,.02));
+    border: 1px solid rgba(226,94,78,.22);
+    border-radius: 22px;
+  }
+
+  .check { flex: none; width: 22px; height: 22px; border-radius: 999px; display:inline-flex; align-items:center; justify-content:center; }
+  .check.good { background: rgba(125,214,111,.15); color: #A9E89C; border: 1px solid rgba(125,214,111,.35); }
+  .check.bad  { background: rgba(226,94,78,.15); color: #F2A196; border: 1px solid rgba(226,94,78,.35); }
+
+  .hr-soft { height: 1px; background: linear-gradient(90deg, transparent, rgba(247,245,239,.12), transparent); }
+
+  .kbd {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 500;
+    background: linear-gradient(180deg, rgba(200,242,74,.22), rgba(200,242,74,.10));
+    color: #EAFBAA; padding: .05em .35em; border-radius: 6px;
+    border: 1px solid rgba(200,242,74,.35);
+  }
+
+  .marquee-row { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+
+  .noise-overlay::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .06;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    mix-blend-mode: overlay;
+  }
+
+  .tick-row > * + * { border-top: 1px dashed rgba(247,245,239,.08); }
+</style>
+</head>
+<body class="relative overflow-x-hidden">
+
+<!-- ───────── NAV ───────── -->
+<header class="relative z-20">
+  <div class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2 group">
+      <span class="inline-block w-8 h-8 rounded-lg bg-gradient-to-br from-lime-500 to-good shadow-cta grid place-items-center font-display font-bold text-ink-950">M</span>
+      <span class="font-display text-lg tracking-tightest text-bone-50">mentor<span class="text-lime-500">.play</span></span>
+    </a>
+    <a href="#cta" class="hidden sm:inline-flex items-center gap-2 text-sm text-bone-100/80 hover:text-bone-50 transition">
+      Baixar apresentação
+      <span aria-hidden="true" class="inline-block translate-y-px">→</span>
+    </a>
+  </div>
+</header>
+
+<!-- ───────── SEÇÃO 1 — HERO ───────── -->
+<section class="relative isolate overflow-hidden">
+  <div class="aurora"></div>
+  <div class="grain"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 pt-10 pb-24 md:pt-16 md:pb-32">
+    <div class="max-w-3xl">
+      <span class="pill"><span class="dot"></span> Material gratuito</span>
+
+      <h1 class="headline font-display font-medium text-bone-50 mt-7 text-[30px] leading-[1.08] tracking-tightest sm:text-[44px] md:text-[60px] lg:text-[72px]">
+        Cansado de fazer reunião comercial e o lead sair dizendo
+        <span class="italic text-bone-100/90">“preciso pensar”?</span>
+      </h1>
+
+      <p class="mt-7 text-lg md:text-xl text-bone-100/80 leading-[1.6] max-w-2xl">
+        Copie e cole a mesma apresentação que está <span class="kbd">convertendo 30%</span> das reuniões em mentoria vendida — para mentores que faturam de <span class="text-bone-50 font-medium">R$20k a R$500k/mês</span>.
+      </p>
+
+      <!-- 3 ícones -->
+      <ul class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl">
+        <li class="card-surface px-4 py-4 flex items-center gap-3">
+          <span class="check good" aria-hidden="true">✓</span>
+          <span class="text-sm text-bone-100/90">Apresentação em <span class="text-bone-50 font-medium">PDF/Canva</span></span>
+        </li>
+        <li class="card-surface px-4 py-4 flex items-center gap-3">
+          <span class="check good" aria-hidden="true">✓</span>
+          <span class="text-sm text-bone-100/90">Roteiro de fala <span class="text-bone-50 font-medium">palavra por palavra</span></span>
+        </li>
+        <li class="card-surface px-4 py-4 flex items-center gap-3">
+          <span class="check good" aria-hidden="true">✓</span>
+          <span class="text-sm text-bone-100/90">Vídeo de como usar <span class="text-bone-50 font-medium">do início ao fim</span></span>
+        </li>
+      </ul>
+
+      <!-- Formulário -->
+      <form id="hero-form" class="mt-10 max-w-xl flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault(); document.getElementById('cta-form').scrollIntoView({behavior:'smooth'});">
+        <label class="sr-only" for="email-hero">Seu melhor e-mail</label>
+        <input id="email-hero" type="email" required placeholder="seu melhor e-mail" class="field flex-1" />
+        <button type="submit" class="cta justify-center whitespace-nowrap">
+          Quero a apresentação
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+
+      <!-- Provas rápidas -->
+      <div class="mt-8 flex flex-wrap items-center text-sm text-bone-400">
+        <span class="flex items-center gap-2"><span class="check good !w-4 !h-4 text-[10px]">✓</span> 100% gratuito</span>
+        <span class="divider-dot"></span>
+        <span class="flex items-center gap-2"><span class="check good !w-4 !h-4 text-[10px]">✓</span> <span class="text-bone-100">+2.500</span> agendamentos em 2025</span>
+        <span class="divider-dot"></span>
+        <span class="flex items-center gap-2"><span class="check good !w-4 !h-4 text-[10px]">✓</span> Validado em <span class="text-bone-100">+104 webinars</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hr-soft"></div>
+</section>
+
+<!-- ───────── SEÇÃO 2 — POR QUE FUNCIONA ───────── -->
+<section class="relative py-24 md:py-32">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="max-w-3xl">
+      <span class="pill">Por que funciona</span>
+      <h2 class="headline font-display font-medium text-bone-50 mt-6 text-[28px] leading-[1.12] tracking-tightest sm:text-[40px] md:text-[52px]">
+        O lead chega na reunião já educado, já qualificado e já pronto para <span class="italic">fechar.</span>
+      </h2>
+      <p class="mt-6 text-lg text-bone-100/75 leading-[1.6]">
+        Não é um pitch improvisado. É uma estrutura testada em centenas de reuniões — onde sua única função é apresentar a oferta e ouvir o “sim”.
+      </p>
+    </div>
+
+    <!-- 3 pilares -->
+    <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-5">
+      <article class="card-surface p-7 relative noise-overlay">
+        <div class="flex items-center gap-3">
+          <span class="font-display text-bone-400 text-sm">01</span>
+          <span class="inline-block w-8 h-[1px] bg-bone-400/40"></span>
+        </div>
+        <h3 class="font-display font-medium text-bone-50 text-2xl mt-4 tracking-tightest">Comunicação que para o scroll</h3>
+        <p class="mt-3 text-bone-100/75 leading-[1.65]">
+          O lead presta atenção porque a mensagem é relevante — não porque você gritou mais alto.
+        </p>
+      </article>
+
+      <article class="card-surface p-7 relative noise-overlay">
+        <div class="flex items-center gap-3">
+          <span class="font-display text-bone-400 text-sm">02</span>
+          <span class="inline-block w-8 h-[1px] bg-bone-400/40"></span>
+        </div>
+        <h3 class="font-display font-medium text-bone-50 text-2xl mt-4 tracking-tightest">Educação antes da venda</h3>
+        <p class="mt-3 text-bone-100/75 leading-[1.65]">
+          Você pesca no oceano azul dos <span class="text-bone-50">97%</span> que ainda não estão prontos pra comprar. Educa, cria consciência e posiciona sua mentoria como a solução óbvia.
+        </p>
+      </article>
+
+      <article class="card-surface p-7 relative noise-overlay">
+        <div class="flex items-center gap-3">
+          <span class="font-display text-bone-400 text-sm">03</span>
+          <span class="inline-block w-8 h-[1px] bg-bone-400/40"></span>
+        </div>
+        <h3 class="font-display font-medium text-bone-50 text-2xl mt-4 tracking-tightest">Conversão por estrutura</h3>
+        <p class="mt-3 text-bone-100/75 leading-[1.65]">
+          Roteiro testado em <span class="text-bone-50">+104 webinars</span>. 50% de comparecimento. 64% em agendamento. <span class="text-lime-500 font-medium">30% em mentoria vendida.</span>
+        </p>
+      </article>
+    </div>
+
+    <!-- Bloco comparativo -->
+    <div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-5">
+      <!-- Vermelho -->
+      <div class="bad-col p-7 md:p-9 relative shadow-badbad">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex w-8 h-8 rounded-full bg-bad/20 border border-bad/40 items-center justify-center text-bad">✕</span>
+          <span class="uppercase tracking-[.18em] text-bad text-xs font-semibold">Reunião comercial comum</span>
+        </div>
+        <ul class="mt-6 space-y-4 text-bone-100/85 tick-row">
+          <li class="flex gap-3 items-start"><span class="check bad" aria-hidden="true">✕</span><span>Pitch improvisado a cada call</span></li>
+          <li class="flex gap-3 items-start pt-4"><span class="check bad" aria-hidden="true">✕</span><span>Lead pedindo desconto ou <em class="not-italic text-bone-50">“preciso pensar”</em></span></li>
+          <li class="flex gap-3 items-start pt-4"><span class="check bad" aria-hidden="true">✕</span><span>Você convencendo, ele resistindo</span></li>
+          <li class="flex gap-3 items-start pt-4"><span class="check bad" aria-hidden="true">✕</span><span>Conversão abaixo de <span class="text-bone-50 font-medium">10%</span></span></li>
+          <li class="flex gap-3 items-start pt-4"><span class="check bad" aria-hidden="true">✕</span><span>Ticket travado em <span class="text-bone-50 font-medium">R$3k–R$5k</span></span></li>
+        </ul>
+      </div>
+
+      <!-- Verde -->
+      <div class="good-col p-7 md:p-9 relative shadow-badgood">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex w-8 h-8 rounded-full bg-good/20 border border-good/40 items-center justify-center text-good">✓</span>
+          <span class="uppercase tracking-[.18em] text-good text-xs font-semibold">A apresentação que entregamos</span>
+        </div>
+        <ul class="mt-6 space-y-4 text-bone-100/90 tick-row">
+          <li class="flex gap-3 items-start"><span class="check good" aria-hidden="true">✓</span><span>Estrutura <span class="text-bone-50 font-medium">validada</span> em centenas de calls</span></li>
+          <li class="flex gap-3 items-start pt-4"><span class="check good" aria-hidden="true">✓</span><span>Lead chega entendendo o valor <em class="not-italic text-bone-50">antes do preço</em></span></li>
+          <li class="flex gap-3 items-start pt-4"><span class="check good" aria-hidden="true">✓</span><span>Você apresenta — ele aplica pra entrar</span></li>
+          <li class="flex gap-3 items-start pt-4"><span class="check good" aria-hidden="true">✓</span><span><span class="text-bone-50 font-medium">30%</span> de conversão em mentoria vendida</span></li>
+          <li class="flex gap-3 items-start pt-4"><span class="check good" aria-hidden="true">✓</span><span>Ticket de <span class="text-bone-50 font-medium">R$20k+</span> sem resistência</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Implicação -->
+    <div class="mt-20 max-w-3xl">
+      <p class="headline font-display text-[22px] sm:text-[30px] md:text-[38px] leading-[1.18] tracking-tightest text-bone-50">
+        Se você aplicasse essa apresentação na sua próxima reunião e fechasse <span class="italic">3 em cada 10 calls</span> — você ficaria feliz ou preocupado?
+      </p>
+
+      <div class="mt-8 space-y-5 text-lg text-bone-100/80 leading-[1.7]">
+        <p>
+          A verdade é simples: enquanto você improvisa pitch a cada reunião, depende de conteúdo diário e gasta tráfego pra gerar lead que não converte, <span class="text-bone-50">outros mentores</span> estão rodando uma apresentação por semana e lotando a agenda do comercial com gente que já sabe o preço, já entende a entrega e já quer fechar.
+        </p>
+        <p>
+          Cada semana sem essa estrutura é mais uma semana pagando tráfego pra gerar lead frio, desgastando o time comercial com curioso e ficando refém de lançamento que funciona 2 meses e para.
+        </p>
+      </div>
+    </div>
+
+    <!-- Depoimento Kelvin -->
+    <figure class="mt-16 card-surface p-7 md:p-10 relative overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full" style="background: radial-gradient(closest-side, rgba(200,242,74,.18), transparent 70%);"></div>
+      <div class="relative">
+        <div class="flex items-center gap-2 text-xs uppercase tracking-[.18em] text-bone-400">
+          <span class="inline-block w-6 h-[1px] bg-bone-400/60"></span> Resultado de quem implementou
+        </div>
+        <blockquote class="mt-6">
+          <p class="headline font-display text-[18px] sm:text-[24px] md:text-[30px] leading-[1.3] tracking-tightest text-bone-50">
+            “Kelvin investia <span class="text-bad">R$10k</span> e voltava <span class="text-bad">R$7k</span>. Ajustamos <em>só a oferta</em> dentro da apresentação — mesmo anúncio, mesma LP, tudo igual. Resultado: investiu <span class="text-lime-500">R$2k</span> e faturou <span class="text-lime-500">R$30k</span>. O problema nunca foi o funil. <span class="italic">Era a apresentação.</span>”
+          </p>
+        </blockquote>
+        <figcaption class="mt-7 flex items-center gap-4">
+          <span class="inline-flex w-11 h-11 rounded-full bg-gradient-to-br from-lime-500 to-good text-ink-950 font-display font-semibold items-center justify-center">K</span>
+          <span class="text-sm text-bone-100/85">
+            <span class="block text-bone-50 font-medium">Kelvin</span>
+            <span class="text-bone-400">De ROAS negativo para <span class="text-bone-100">15×</span></span>
+          </span>
+        </figcaption>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ───────── SEÇÃO 3 — CTA FINAL ───────── -->
+<section id="cta" class="relative py-24 md:py-32 overflow-hidden">
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-bone-400/30 to-transparent"></div>
+    <div class="absolute left-1/2 top-0 -translate-x-1/2 w-[1200px] h-[600px] rounded-full"
+         style="background: radial-gradient(closest-side, rgba(200,242,74,.14), transparent 70%);"></div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <span class="pill"><span class="dot"></span> Material gratuito</span>
+
+    <h2 class="headline font-display font-medium text-bone-50 mt-7 text-[28px] leading-[1.1] tracking-tightest sm:text-[42px] md:text-[58px]">
+      Baixe a apresentação que está convertendo <span class="italic">30%</span> das reuniões em mentoria vendida
+    </h2>
+
+    <p class="mt-6 text-lg md:text-xl text-bone-100/80 leading-[1.6] max-w-2xl mx-auto">
+      O mesmo modelo usado por mentores que faturam de <span class="text-bone-50 font-medium">R$20k a R$500k/mês</span>. Sem firula, sem teoria — a estrutura exata que funciona.
+    </p>
+
+    <!-- Recap -->
+    <ul class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-left">
+      <li class="card-surface px-4 py-4 flex items-center gap-3">
+        <span class="check good" aria-hidden="true">✓</span>
+        <span class="text-sm text-bone-100/90">Apresentação em <span class="text-bone-50 font-medium">PDF/Canva</span></span>
+      </li>
+      <li class="card-surface px-4 py-4 flex items-center gap-3">
+        <span class="check good" aria-hidden="true">✓</span>
+        <span class="text-sm text-bone-100/90">Roteiro <span class="text-bone-50 font-medium">palavra por palavra</span></span>
+      </li>
+      <li class="card-surface px-4 py-4 flex items-center gap-3">
+        <span class="check good" aria-hidden="true">✓</span>
+        <span class="text-sm text-bone-100/90">Vídeo passo a passo</span>
+      </li>
+    </ul>
+
+    <!-- Form -->
+    <form id="cta-form" class="mt-10 max-w-xl mx-auto flex flex-col sm:flex-row gap-3 text-left"
+          onsubmit="event.preventDefault(); this.querySelector('button').innerText='Enviado ✓'; this.querySelector('button').disabled=true;">
+      <label class="sr-only" for="email-cta">Seu melhor e-mail</label>
+      <input id="email-cta" type="email" required placeholder="seu melhor e-mail" class="field flex-1" />
+      <button type="submit" class="cta justify-center whitespace-nowrap">
+        Quero a apresentação agora
+        <span aria-hidden="true">→</span>
+      </button>
+    </form>
+
+    <p class="mt-4 text-xs text-bone-400">
+      Sem spam. Você recebe o link no e-mail em segundos.
+    </p>
+
+    <!-- P.S. -->
+    <div class="mt-16 mx-auto max-w-2xl card-surface p-6 text-left relative noise-overlay">
+      <div class="flex items-start gap-4">
+        <span class="font-display italic text-lime-500 text-xl leading-none pt-1">P.S.</span>
+        <p class="text-bone-100/85 leading-[1.65]">
+          Cada semana sem uma apresentação estruturada é mais uma semana pagando tráfego pra gerar lead que não converte. Essa é a mesma estrutura que gerou <span class="text-bone-50 font-medium">+2.500 agendamentos qualificados em 2025</span>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── RODAPÉ ───────── -->
+<footer class="relative border-t border-bone-400/10 py-10">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-sm text-bone-400">
+    <div class="flex items-center gap-2">
+      <span class="inline-block w-6 h-6 rounded-md bg-gradient-to-br from-lime-500 to-good grid place-items-center font-display font-bold text-ink-950 text-xs">M</span>
+      <span class="font-display tracking-tightest text-bone-100">mentor.play</span>
+    </div>
+    <p>© 2026 · Todos os direitos reservados.</p>
+    <div class="flex gap-5">
+      <a href="#" class="hover:text-bone-50 transition">Política de Privacidade</a>
+      <a href="#" class="hover:text-bone-50 transition">Termos</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
